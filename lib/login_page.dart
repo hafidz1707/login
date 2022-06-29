@@ -1,28 +1,44 @@
 import 'package:flutter/material.dart';
 import 'routes.dart';
 
-class Page_Login extends StatefulWidget {
-  const Page_Login({Key? key}) : super(key: key);
+class PageLogin extends StatefulWidget {
+  const PageLogin({Key? key}) : super(key: key);
 
   @override
-  State<Page_Login> createState() => _Page_LoginState();
+  State<PageLogin> createState() => _PageLoginState();
 }
 
-class _Page_LoginState extends State<Page_Login> {
+class _PageLoginState extends State<PageLogin> {
   @override
   Widget build(BuildContext context) {
     return Material(
-
       color: Colors.white,
+
       child: SafeArea(
         child: SingleChildScrollView(
           child: Column(
+
             children: [
+
+              AppBar(
+                  title: const Text(
+                'OwO',
+                style: TextStyle(fontFamily: 'Righteous',
+                    fontSize: 20,
+                    color: Colors.black)
+                ),
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,
+                shadowColor: Colors.transparent,
+              ),
+
+              //const SizedBox(height: 15),
+              /*
               Container(
                 alignment: Alignment.bottomLeft,
                 height: 40,
-                child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.0),
                     child: Text(
                         'OWO',
                         style: TextStyle(fontFamily: 'Righteous',
@@ -31,29 +47,17 @@ class _Page_LoginState extends State<Page_Login> {
                     )
                 ),
               ),
-
-              /*
-              Container(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'OWO',
-                  style: TextStyle(fontFamily: 'Righteous',
-                      fontSize: 16,
-                      color: Colors.grey)
-                )
-              ),
               */
-              //SizedBox(height: 5),
 
-              CircleAvatar(
+              const CircleAvatar(
                 radius: 100,
                 backgroundImage: AssetImage('assets/OwoBotPNG.png'),
               ),
 
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
 
               Row(
-                  children: [
+                  children: const [
                     Expanded(
                       child: Divider(
                         indent: 30,
@@ -120,7 +124,7 @@ class _Page_LoginState extends State<Page_Login> {
                       ),
                     ),
 
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
 
                     ElevatedButton(
                       onPressed: (() {
@@ -130,17 +134,17 @@ class _Page_LoginState extends State<Page_Login> {
                           padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 10),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10))),
-                      child: Text('LOGIN',
+                      child: const Text('LOGIN',
                         style: TextStyle(fontFamily: 'Righteous',
                             fontSize: 16,
                             color: Colors.white),
                       ),
                     ),
 
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
 
                     Row(
-                        children: [
+                        children: const [
                           Expanded(
                             child: Divider(
                               endIndent: 10,
@@ -164,34 +168,34 @@ class _Page_LoginState extends State<Page_Login> {
                         ]
                     ),
 
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
 
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         InkWell(
                           onTap: () {},
-                          child: CircleAvatar(
+                          child: const CircleAvatar(
                             radius: 20,
                             backgroundImage: AssetImage('assets/Facebook.png'),
                           ),
                         ),
 
-                        SizedBox(width: 20),
+                        const SizedBox(width: 20),
 
                         InkWell(
                           onTap: () {},
-                          child: CircleAvatar(
+                          child: const CircleAvatar(
                             radius: 20,
                             backgroundImage: AssetImage('assets/Apple.png'),
                           ),
                         ),
 
-                        SizedBox(width: 20),
+                        const SizedBox(width: 20),
 
                         InkWell(
                           onTap: () {},
-                          child: CircleAvatar(
+                          child: const CircleAvatar(
                             radius: 20,
                             backgroundImage: AssetImage('assets/Google.png'),
                           ),
@@ -208,7 +212,7 @@ class _Page_LoginState extends State<Page_Login> {
                           onPressed: (() {
                             Navigator.pushNamed(
                               context,
-                              MyRoutes.Register,
+                              MyRoutes.register,
                             );
                           }),
 

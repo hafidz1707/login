@@ -6,10 +6,10 @@ import 'routes.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: '/register',
+    initialRoute: '/login',
     routes: {
-      MyRoutes.loginScreen: (context) => Page_Login(),
-      MyRoutes.Register: (context) => Page_Register()
+      MyRoutes.loginScreen: (context) => const PageLogin(),
+      MyRoutes.register: (context) => const PageRegister()
     }
   )
   );
