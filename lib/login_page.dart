@@ -9,6 +9,10 @@ class PageLogin extends StatefulWidget {
 }
 
 class _PageLoginState extends State<PageLogin> {
+
+  bool _passVisibility = true;
+  TextEditingController passwordCon = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -101,11 +105,24 @@ class _PageLoginState extends State<PageLogin> {
                       },
                     ),
                     TextFormField(
-                      obscureText: true,
-                      decoration: const InputDecoration(
-                        icon: Icon(Icons.lock),
+                      textInputAction: TextInputAction.done,
+                      keyboardType: TextInputType.visiblePassword,
+                      controller: passwordCon,
+                      obscureText: _passVisibility,
+                      decoration: InputDecoration(
+                        icon: const Icon(Icons.lock),
                         hintText: 'Enter Your Password',
                         labelText: 'Password',
+                        //suffixIcon: Icon(Icons.visibility),
+                        suffixIcon: IconButton(onPressed: () {
+                          setState(() {
+                            _passVisibility = !_passVisibility;
+                          });
+                        },
+                          icon: _passVisibility
+                              ? const Icon(Icons.visibility_off)
+                              : const Icon(Icons.visibility),
+                        )
                       ),
                       onChanged: (value) {
                         setState(() {});
